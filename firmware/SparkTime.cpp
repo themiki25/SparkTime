@@ -29,6 +29,19 @@
 
 #include "SparkTime.h"
 
+//#include <Wire.h>
+// Energia support
+//#ifndef ENERGIA
+//#include <avr/pgmspace.h>
+//#else
+//#define pgm_read_word(data) *data
+//#define pgm_read_byte(data) *data
+//#define PROGMEM
+//#endif
+//#include "RTClib.h"
+//#include <Arduino.h>
+
+
 SparkTime::SparkTime()
 {
     _UDPClient = NULL;
@@ -433,17 +446,6 @@ int32_t SparkTime::timeZoneDSTOffset(uint32_t tnow) {
 // 2012-01-12 DS1388 support
 // 2013-08-29 ENERGIA MSP430 support
 
-#include <Wire.h>
-// Energia support
-#ifndef ENERGIA
-#include <avr/pgmspace.h>
-#else
-#define pgm_read_word(data) *data
-#define pgm_read_byte(data) *data
-#define PROGMEM
-#endif
-#include "RTClib.h"
-#include <Arduino.h>
 
 #define DS1307_ADDRESS          0x68
 #define DS1307_CONTROL_REGISTER 0x07
