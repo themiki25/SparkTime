@@ -34,9 +34,9 @@
 //#ifndef ENERGIA
 //#include <avr/pgmspace.h>
 //#else
-//#define pgm_read_word(data) *data
-//#define pgm_read_byte(data) *data
-//#define PROGMEM
+#define pgm_read_word(data) *data
+#define pgm_read_byte(data) *data
+#define PROGMEM
 //#endif
 //#include "RTClib.h"
 //#include <Arduino.h>
