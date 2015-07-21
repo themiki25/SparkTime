@@ -96,6 +96,11 @@ private:
 };
 
 
+/********************************************************************************/
+// A library for handling real-time clocks, dates, etc.
+// 2010-02-04 <jc@wippler.nl> http://opensource.org/licenses/mit-license.php
+// 2012-11-08 RAM methods - idreammicro.com
+// 2012-11-14 SQW/OUT methods - idreammicro.com
 // Simple general-purpose date/time class (no TZ / DST / leap second handling!)
 class DateTime {
 public:
