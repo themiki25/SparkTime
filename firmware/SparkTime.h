@@ -164,14 +164,16 @@ public:
    static void adjust(const DateTime& dt);
    static DateTime now();
    static uint8_t isrunning();
+   
    // EEPROM
    static uint8_t getEEPROMBank(uint16_t pos);
    static void EEPROMWrite(uint16_t pos, uint8_t c);
    static uint8_t EEPROMRead(uint16_t pos);
    static void EEPROMWritePage(uint8_t page, uint8_t* data);
    static void EEPROMReadPage(uint8_t page, uint8_t* buffer);
+   
    //Watchdog
-   static uint8_t bin2bcd (uint8_t val) { return val + 6 * (val / 10);
+   static void startWatchdogTimer(uint8_t Seconds, uint8_t TSeconds);
    static void resetWatchdogTimer();
 
    // utility functions
