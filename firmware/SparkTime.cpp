@@ -1144,6 +1144,17 @@ bool HMC5883L::begin()
     return true;
 }
 
+bool HMC5883L::available()
+{
+    Wire.begin();
+
+    if ((fastRegister8(HMC5883L_REG_IDENT_A) != 0x48)
+    || (fastRegister8(HMC5883L_REG_IDENT_B) != 0x34)
+    || (fastRegister8(HMC5883L_REG_IDENT_C) != 0x33))
+           return false;
+    else   return true;	
+}
+
 Vector HMC5883L::readRaw(void)
 {
     v.XAxis = readRegister16(HMC5883L_REG_OUT_X_M) - xOffset;
