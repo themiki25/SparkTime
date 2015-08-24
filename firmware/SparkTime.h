@@ -338,6 +338,8 @@ class HMC5883L
 
 	bool begin(void);
 
+	bool available(void);
+
 	Vector readRaw(void);
 	Vector readNormalize(void);
 
